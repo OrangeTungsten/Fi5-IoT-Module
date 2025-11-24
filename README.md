@@ -2,7 +2,7 @@
 
 Fi5 IoT module is an ESP-32S-based device designed primarily as a data-logging unit, enabling the collection and upload of 3D printing statistic values to a cloud server, as well as displaying them locally on a dedicated display. The project also involves extending the Marlin project by adding a custom G-code command at the firmware level.
 
-This version of the device is implemented on an MKS Robin Nano v1.2 board running on Marlin v2.1.2.5 firmware, but it can be connected to any other device as long as the system is capable of exchanging data over an available UART port. An MH-ET 2.13 in E-ink display is used for local output.
+This version of the device is implemented on a [Flutur i5](https://github.com/OrangeTungsten/Flutur-i5) FDM 3D printer, with [MKS Robin Nano v1.2](https://makerbase3d.com/product/mks-robin-nano-v1-2/?srsltid=AfmBOooX1eGkBQStCqhv-IZ1dArsi8UtKZWTpPTg1CoTkC5dbtrfiOg2) controller board running on a [Marlin v2.1.2.5](https://github.com/MarlinFirmware/Marlin/tree/2.1.2.5) firmware, but it can be connected to any other device as long as the system is capable of exchanging data over an available UART port. An MH-ET 2.13 in E-ink display is used for local output.
 
 This project provides an infrastructure for communication with external devices, enabling the forwarding of selected data to a cloud server, forming an easily operable IoT platform that It can be used as a flexible platform for creating logging solutions of various types. Project is suitable for further development in multiple directions. The system can be expanded to support two-way communication, allowing remote-control functionality of connected device (3D printer). Although the device is currently implemented for one type of application – logging data, it can be upgraded to support different types of peripherals, including operation with multiple devices simultaneously. This infrastructure provides flexibility and openness for any type of future upgrade.
 
@@ -39,7 +39,7 @@ The idea is to create a device that communicates with the microcontroller of the
 ## UART
 Universal Asynchronous Receiver/Transmitter (UART) is a simple serial communication interface used to send data between two digital devices using only one transmit and one receive line (TX and RX). Unlike parallel communication where several bits are transferred at once, UART sends data bit-by-bit over a single wire, making it cost-effective, low-pin and easy to implement. Data is framed with a start bit, optional parity, and stop bit, so both sides understand where each byte begins and ends. Because UART is asynchronous, both devices must use the same baud rate (bit speed) to correctly interpret the data, but no shared clock line is needed.
 ##Port on motherboard
-MKS Robin Nano v1.2 is running on STM32F103VET6 microcontroller. Official documentation shows that this microcontroller features up to five UART interfaces. USART ports also support synchronous mode, which is not needed for this application.
+MKS Robin Nano v1.2 is running on [STM32F103VET6](https://www.st.com/en/microcontrollers-microprocessors/stm32f103ve.html) microcontroller. Official documentation shows that this microcontroller features up to five UART interfaces. USART ports also support synchronous mode, which is not needed for this application.
 
 Table 1. shows the default pinout:
 
