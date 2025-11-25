@@ -205,11 +205,12 @@ edit: Marlin/src/gcode/IoT/M1600.cpp
 #endif
 ```
 
-Message from 3DP motherboard will be sent over its UART1 port, in form of single string line, where variables are separated with a separators (commas). Later, firmware of the ESP32 (IoT Module) will be programmed to parse these values between separators to the separate variables.
+Every time when M1600 command is called, message from 3DP motherboard will be sent over its UART1 port, in the form of single string line, where variables are separated with a separators (commas). In order to activate this system after every print, line M1600 should be placed at the end of every G-code (print). That should be done in the slicer configuration.
+Later, firmware of the ESP32 (IoT Module) will be programmed to parse these values between separators to the separate variables.
 
 ----------------------------
 
-# 4. Creating a cloud backend.
+# 4. Creating a cloud backend
 
 In this setup, Google Drive, together with Google Spreadsheets and Apps Script, serves as a cloud backend for IoT data. It functions as a centralized repository where statistics from a 3D printer are periodically uploaded, and made available for further processing or download.
 Functionality of this approach reflects in following: IoT module (device) sends HTTP POST request, triggering Google Apps Script webhook to append new rows to Google Sheet. Google Spreadsheet acts as a centralized cloud data store. Apps Script could be expanded to validate data, compute summaries, generate alerts, or create and update visualizations. 
