@@ -1,3 +1,4 @@
+
 # Introduction
 
 Fi5 IoT module is an ESP-32S-based device designed primarily as a data-logging unit, enabling the collection and upload of 3D printing statistic values to a cloud server, as well as displaying them locally on a dedicated display. The project also involves extending the Marlin project by adding a custom G-code command at the firmware level.
@@ -7,7 +8,7 @@ This version of the device is implemented on a [Flutur i5](https://github.com/Or
 This project provides an infrastructure for communication with external devices, enabling the forwarding of selected data to a cloud server, forming an easily operable IoT platform that It can be used as a flexible platform for creating logging solutions of various types. Project is suitable for further development in multiple directions. The system can be expanded to support two-way communication, allowing remote-control functionality of connected device (3D printer). Although the device is currently implemented for one type of application – logging data, it can be upgraded to support different types of peripherals, including operation with multiple devices simultaneously. This infrastructure provides flexibility and openness for any type of future upgrade.
 
 **Project provides:**
-- Complete documentation for reproducing the device: Bill of materials; Electronics schematics; PCB layouts (copper, soldermask, and silkscreen layers); PCB build parameters and guidance; CAD models of 3D printable enclosure; 
+- Complete documentation for reproducing the device: Bill of materials; Electronics schematics; PCB layouts (copper, soldermask, and silkscreen layers); PCB build parameters and guidance; CAD models of 3D printable enclosure; Guidance for configuration;
 
 - Additional code and guidance for modifying 3D printer firmware in order to define a new, UART communication port;
 
