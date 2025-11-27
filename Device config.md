@@ -10,7 +10,12 @@ On the image below, pinout of MainPCB is given.
 Device features ports:
 - **BTN_PORT** (X1) - used for connecting four configuration pushbuttons (ButtonsPCB peripheral);
 - **3DP_PORT** (X2) - used for communication with 3D printer
-- **SERIAL_CFG_PORT** (X3) - used for connecting computer via UART to USB converter
+- **PC_PORT** (X3) - used for connecting computer via UART to USB converter
 - **DISP_PORT** (X4) - used for display pheripheral
 
+## Programming
+Flashing firmware and communication with PC is done via PC_PORT. USB-to-UART converter should be used. Use of ESP32 programmer is recommended.
+Wiring should be conducted as on the image:
+-
+Device features a programming button FLASH_BTN (SW1), which should be  during the be
 
