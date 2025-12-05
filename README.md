@@ -318,8 +318,10 @@ This firmware uses GxEPD2_3C with Adafruit BusIO and Adafruit GFX libraries for 
 
 Firmware follows a simplified algorithms: 
 
-<img width="1954" height="2590" alt="main" src="https://github.com/user-attachments/assets/976fbc6c-c834-480c-88e0-2f69c419891e" />
-<img width="2498" height="3555" alt="wifi_cfg" src="https://github.com/user-attachments/assets/7836ba0c-a41a-452b-a50f-f8ebdfc87ee8" /> <img width="1740" height="2123" alt="wifi_rst" src="https://github.com/user-attachments/assets/aff285c3-9971-45df-bdfb-ed5a18797aec" /> <img width="1558" height="1330" alt="url_cfg" src="https://github.com/user-attachments/assets/7fc5849b-ace3-4f5e-a1cd-a8efa5e17ffd" />
+<img width="500" height="660" alt="main" src="https://github.com/user-attachments/assets/976fbc6c-c834-480c-88e0-2f69c419891e" />
+<img width="464" height="660" alt="wifi_cfg" src="https://github.com/user-attachments/assets/7836ba0c-a41a-452b-a50f-f8ebdfc87ee8" /> 
+<img width="491" height="600" alt="wifi_rst" src="https://github.com/user-attachments/assets/aff285c3-9971-45df-bdfb-ed5a18797aec" />
+<img width="468" height="400" alt="url_cfg" src="https://github.com/user-attachments/assets/7fc5849b-ace3-4f5e-a1cd-a8efa5e17ffd" />
 
  
 
