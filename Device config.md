@@ -4,7 +4,7 @@ This document provides a complete overview of the device’s hardware interface 
 ## Pinout
 On the image below, pinout of MainPCB is given. 
 
-<img width="712" height="520" alt="Device config 1" src="https://github.com/user-attachments/assets/cb30e412-6ce5-4727-8dcb-18fe5d735b97" />
+<img width="712" height="520"  alt="Device config 1" src="https://github.com/user-attachments/assets/a3d7cf66-c838-431d-9103-a9e0c8c127a6" />
 
 
 Device features ports:
@@ -17,5 +17,5 @@ Device features ports:
 Flashing firmware and communication with PC is done via PC_PORT. USB-to-UART converter should be used. Use of ESP32 programmer is recommended.
 Wiring should be conducted as on the image:
 -
-Device features a programming button FLASH_BTN (SW1), which should be  during the be
+Device features a programming button FLASH_BTN (SW1), which should be activated during the upload.
 
