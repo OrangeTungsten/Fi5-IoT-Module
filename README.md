@@ -1,3 +1,4 @@
+<img width="1612" height="318" alt="Baner" src="https://github.com/user-attachments/assets/5594c74e-c346-47bb-8f1e-d2ea98397629" />
 
 # Introduction
 
@@ -196,9 +197,12 @@ edit: Marlin/src/gcode/IoT/M1600.cpp
 
         localStats = PrintCounter::getStats();
 
-        SERIAL_IOT_PRINT(localStats.totalPrints + ",");
-        SERIAL_IOT_PRINT(localStats.finishedPrints + ",");
-        SERIAL_IOT_PRINT(localStats.printTime + ",");
+        SERIAL_IOT_PRINT(localStats.totalPrints);
+        SERIAL_IOT_PRINT(",");
+        SERIAL_IOT_PRINT(localStats.finishedPrints);
+        SERIAL_IOT_PRINT(",");
+        SERIAL_IOT_PRINT(localStats.printTime );
+        SERIAL_IOT_PRINT(",");
         SERIAL_IOT_PRINTLN(localStats.filamentUsed);
 
     }
