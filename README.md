@@ -17,7 +17,7 @@ This project provides an infrastructure for communication with external devices,
 
 - Additional code and guidance for creating cloud platform on Google Drive for storing data;
 
-- Device firmware with guidance.
+- Device firmware source code with guidance.
 
 
 ## Stages of realization
