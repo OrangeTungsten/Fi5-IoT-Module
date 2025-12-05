@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2025-12-04T11:33:03Z",
+        "GenerationSoftware": {
+            "Application": "Fusion Electronics",
+            "Vendor": "Autodesk",
+            "Version": "9.7.0"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 0.9608,
+        "LayerNumber": 2,
+        "Name": {
+            "ProjectId": "Main PCB v101"
+        },
+        "Owner": "Avram Kovačević <akovacevic@tfbor.bg.ac.rs>",
+        "Size": {
+            "X": 52.197,
+            "Y": 39.116
+        }
+    }
+}
