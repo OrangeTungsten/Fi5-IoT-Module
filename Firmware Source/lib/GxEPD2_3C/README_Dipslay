@@ -1,0 +1,12 @@
+GxEPD2_3C library includes Adafruit_GFX, which needs Adadruit_BusIO library to work,
+so mentioned libraries are for GxEPD2_213_Z98c display. 
+Connection should be established via pins:
+
+ESP32   |   Display
+--------------------  
+    5   |   CS
+    17  |   DC
+    16  |   RESET
+    4   |   BUSY
+
+-Avram K

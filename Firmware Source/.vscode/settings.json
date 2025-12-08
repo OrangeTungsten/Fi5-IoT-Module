@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "glcdfont.c": "cpp",
+        "random": "cpp",
+        "string": "cpp"
+    },
+
+    "files.exclude": {
+        "**/desktop.ini": true
+    }
+}
