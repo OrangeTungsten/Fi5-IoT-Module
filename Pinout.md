@@ -1,4 +1,4 @@
-# Device configuration
+# Device
 This document provides a complete overview of the device’s hardware interface and explains the steps required for proper configuration. It includes annotated images showing the pinout, detailed descriptions of each connector and button, as well as the full procedure for the initial setup and operation.
 
 ## Pinout
