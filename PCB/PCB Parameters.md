@@ -1,3 +1,5 @@
+This document provides parameters for DIY PCB build. Manufacturing files are given.
+
 ## PCB clad
 One sided PCB clad  
 Copper thickness: 35 um  
