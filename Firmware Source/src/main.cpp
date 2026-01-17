@@ -1,3 +1,30 @@
+/*
+ * main.cpp
+ * Fi5-IoT-Module — ESP32-based IoT and Logging Module
+ *
+ * Project: Fi5-IoT-Module | https://github.com/OrangeTungsten/Fi5-IoT-Module
+ * Parent project: Flutur-i5 3D printer | https://github.com/OrangeTungsten/Flutur-i5
+ *
+ * Description:
+ *   This file contains the main code for the Fi5-IoT-Module,
+ *   an ESP32-powered system designed to collect, process, and transmit
+ *   operational data from 3D printers or other serial-based devices.
+ *   The module listens on a UART interface, parses incoming telemetry
+ *   (e.g., print counters, runtime statistics, filament usage), and
+ *   optionally forwards the processed data to a cloud backend or displays
+ *   it locally.
+ *   This module is hardware-agnostic and can be adapted to different printer firmwares.
+ *   Refer to README.md and PCB/Readme.md for details, pinout and wiring diagrams.
+ *
+ * Author: OrangeTungsten
+ * Created: August 2025
+ * Last Modified: 17.01.2026.
+ *
+ * License: GPL-3.0 (refer to the LICENSE file in this repository)
+ *
+ */
+
+
 #include <Arduino.h>
 #include <nvs_flash.h>
 #include <Preferences.h>
