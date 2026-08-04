@@ -14,7 +14,7 @@ Device: Anycubic Photon Mono M5s Pro
 Display type: Monochrome 10.1" LCD, UV light @ 405 nm  
 Image used: Positive STL model of PCB traces  
 Exposure mode: Single-frame light exposure  
-Exposure time: 40 seconds  
+Exposure time: 25 seconds  
 ___
 
 ## Developing
