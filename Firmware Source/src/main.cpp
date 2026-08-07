@@ -18,7 +18,7 @@
  *
  * Author: OrangeTungsten
  * Created: August 2025
- * Last Modified: 17.01.2026.
+ * Last Modified: 15.08.2026.
  *
  * License: GPL-3.0 (refer to the LICENSE file in this repository)
  *
@@ -87,7 +87,6 @@ void setup() {
     pinMode(WIFI_CFG_PIN, INPUT_PULLUP);
     pinMode(WIFI_RST_PIN, INPUT_PULLUP);
     pinMode(IOT_CFG_PIN,  INPUT_PULLUP);
-    pinMode(12, INPUT_PULLUP);
     pinMode(LED_PIN, OUTPUT);
 
     attachInterrupt(WIFI_CFG_PIN, WiFiCfgISR, FALLING);
@@ -102,18 +101,14 @@ void setup() {
     Serial.println("Checking for default parameters...");
     
     //Initial connection to existing WiFi
-    //EEPROM.begin("WiFi Parameters", RO_MODE); 
     if(EEPROM.isKey("SSID") && EEPROM.isKey("Password")){
         WiFiConnect(EEPROM.getString("SSID"), EEPROM.getString("Password"));
-        //EEPROM.end();
     }else{
         Serial.println("There are no default parameters.");
-        //EEPROM.end();
         EstablishNewConnection();
     }
 
     //Check if API is defined
-    //EEPROM.begin("API", RO_MODE);
     if(EEPROM.isKey("APIEndpoint")){
         Serial.printf("Write API URL is: %s\n", EEPROM.getString("APIEndpoint").c_str());
     }else{
@@ -155,25 +150,10 @@ void loop() {
         //URL Configure Interrupt
         if(URL_CFG == 1){
 
-            DefineEndpointURL ();
+            DefineEndpointURL();
             SerialPrintEndSession('=');
             URL_CFG = 0;
         
-        }
-        
-        //Test pin
-        if(digitalRead(12)==0){
-
-            digitalWrite(LED_PIN, 1);
-            while(digitalRead(12)==0) {}
-            
-            getCurParams();
-
-            // UploadData("1", "2", "3", "4");
-            // UpdateDisplay("","","","", dateTime);
-
-            digitalWrite(LED_PIN, 0);
-
         }
         
         delay(10);
@@ -207,7 +187,7 @@ void IRAM_ATTR IoTCfgISR(){
 }
 
 
-////Connect to the new WiFi network
+//Connect to the new WiFi network
 void EstablishNewConnection(){
 
     //Set the parameters
@@ -241,8 +221,6 @@ void EstablishNewConnection(){
 //Connect to the previous WiFi network
 void EstablishOldConnection(){
 
-    //EEPROM.begin("WiFi Parameters", RO_MODE);
-
     //Connect to old network only if Default parameters in NVM exist
     if(EEPROM.isKey("SSID") && EEPROM.isKey("Password")){
         
@@ -260,8 +238,6 @@ void EstablishOldConnection(){
     }else{
         Serial.println("Default parameters doesn't exist. Not connected.");
     }
-
-    //EEPROM.end();
    
 }
 
@@ -281,14 +257,16 @@ void WiFiReset(){
 
     while(millis()-timer < 3000) {
 
-        if(digitalRead(WIFI_RST_PIN) == 0){ 
+        if(digitalRead(WIFI_RST_PIN) == 0){
+
             while(digitalRead(WIFI_RST_PIN)==0) {}
-            //EEPROM.begin("WiFi Parameters", RW_MODE);
+
             EEPROM.remove("SSID");
             EEPROM.remove("Password");
-            //EEPROM.end();
+
             Serial.println("-> Default parameters are earsed");
             return;
+
         }
         delay(50);
     }
@@ -299,8 +277,6 @@ void WiFiReset(){
 
 //Store new WiFi parameters to the EEPROM (NVS)
 void SaveNewParameters(){
-
-    //EEPROM.begin("WiFi Parameters", RW_MODE);
 
     //Update SSID to NVM
     if(EEPROM.isKey("SSID") != 1 || Parameters.WiFiSSID != EEPROM.getString("SSID")){
@@ -318,14 +294,10 @@ void SaveNewParameters(){
         Serial.println("Default password not changed.");
     }
 
-    //EEPROM.end();
-
 }
 
 //Store API endpoint URL to the EEPROM (NVS)
 void DefineEndpointURL(){
-
-    //EEPROM.begin("API", RW_MODE);
     
     Serial.println("Define full URL of the API endpoint: ");
     while(Serial.available() == 0){}
@@ -336,15 +308,12 @@ void DefineEndpointURL(){
 
     //Store new API Endpoint URL to NVM
     if(EEPROM.isKey("APIEndpoint") != 1 || APIEndpoint != EEPROM.getString("APIEndpoint")){
-    //     EEPROM.remove("APIEndpoint");
         EEPROM.putString("APIEndpoint", APIEndpoint);
         Serial.println("Default API endpoint URL is updated.");
     }else{
         Serial.println("Default API endpoint URL is not changed.");
     }
 
-
-    //EEPROM.end();
 
 }
 
@@ -388,19 +357,13 @@ void UploadData(String tP, String fP, String pT, String fU){
 
     if(Parameters.Connected == 1){
 
-        //EEPROM.begin("API", RO_MODE);
-
         if(EEPROM.isKey("APIEndpoint")){
-
             String endpointURL =  EEPROM.getString("APIEndpoint");
             httpPOST(endpointURL, tP, fP, pT, fU);
-            
         }else{
             Serial.println("API Endpoint URL is not defined. Run setup by pressing IoT_Cfg button.");
         }
         
-        //EEPROM.end();
-
     }else{
         Serial.println("Can't upload. Internet connection doesn't exist.");
     }
@@ -410,19 +373,15 @@ void UploadData(String tP, String fP, String pT, String fU){
 
 void getCurParams(){
 
-    //EEPROM.begin("WiFi Parameters", RO_MODE);
     Serial.println(EEPROM.getString("SSID"));
     Serial.println(EEPROM.getString("Password"));
-    //EEPROM.end();
 
-    //EEPROM.begin("API", RO_MODE);
     Serial.println(EEPROM.getString("SSID"));
     Serial.println(EEPROM.getString("APIEndpoint"));
-    //EEPROM.end();
 
 }
 
-//Print 28 times sign on Serial0
+//Print text divider
 void SerialPrintEndSession(char sign){
 
     for(uint8_t i=0; i<28; i++){

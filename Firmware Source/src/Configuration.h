@@ -12,13 +12,11 @@
 
     //Display Pins
     #define DISP_BUSY_PIN   4
-    #define DISP_RESET_PIN  16//sa 4 zamena
+    #define DISP_RESET_PIN  16
     #define DISP_DC_PIN     17
     #define DISP_CS_PIN     5
     //SCLK-18; SDI-23
 
-    //Logo
-    
 #endif
 
 //WiFi Settings Pins

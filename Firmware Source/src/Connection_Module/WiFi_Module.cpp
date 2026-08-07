@@ -103,12 +103,15 @@ void WiFiConnect(String ssid, String password){
 
     //Wait to establish connection
     while(WiFi.status() != WL_CONNECTED){
+
+        //digitalWrite(LED_PIN, 1);
         Serial.print(".");
-        delay(600);
+        delay(400);
+        //digitalWrite(LED_PIN, 0);
 
         //Timeout
         if(millis() - WiFiTimeout >= 15000){
-            //Parameters.Connected = false;
+            digitalWrite(LED_PIN, 0);
             Serial.println("Error: Timeout!");
             WiFi.disconnect(true);
             return;
@@ -127,13 +130,14 @@ void WiFiConnect(String ssid, String password){
         
         //LED
         digitalWrite(LED_PIN, 1);
-        delay(120);
+        delay(100);
         digitalWrite(LED_PIN, 0);
-        delay(120);
+        delay(100);
         digitalWrite(LED_PIN, 1);
-        delay(120);
+        delay(100);
         digitalWrite(LED_PIN, 0);
-        delay(120);
+        delay(100);
+        digitalWrite(LED_PIN, 1);
     
     }
 
@@ -162,6 +166,7 @@ void WiFiDisconnect(){
         delay(200);
     }
 
+    digitalWrite(LED_PIN, 0);
     Serial.println();
     Serial.println("Disconnected from network.");   
     

@@ -28,7 +28,18 @@ void httpPOST(String endpointURL, String tP, String fP, String pT, String fU){
     uint8_t httpResponseCode = HTTP.POST(jsonData);
 
     if (httpResponseCode > 0){
+
+        //LED
         digitalWrite(LED_PIN, 1);
+        delay(100);
+        digitalWrite(LED_PIN, 0);
+        delay(100);
+        digitalWrite(LED_PIN, 1);
+        delay(100);
+        digitalWrite(LED_PIN, 0);
+        delay(100);
+        digitalWrite(LED_PIN, 1);
+        
         Serial.println("Data uploaded.");
     }else{
         Serial.println("Upload error!");
